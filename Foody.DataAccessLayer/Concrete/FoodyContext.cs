@@ -12,7 +12,7 @@ namespace Foody.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=192.168.1.56; Database=SignalRrestoDb; Integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-SOPG366;initial Catalog=FoodyDb; User=sa; Password=QFC7LGmuCJa205; TrustServerCertificate=True;");
         }
 
         public DbSet<About> Abouts { get; set; }
