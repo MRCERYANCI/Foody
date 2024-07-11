@@ -1,4 +1,5 @@
 ﻿using Foody.BusinessLayer.Abstract;
+using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class ReviewManager : IReviewService
     {
-        public async Task TDelete(int id)
+        private readonly IReviewDal _reviewDal;
+
+        public ReviewManager(IReviewDal reviewDal)
         {
-            throw new NotImplementedException();
+            _reviewDal = reviewDal;
         }
 
-        public async Task<List<Review>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _reviewDal.DeleteAsync(id);
         }
 
-        public async Task<Review> TGetById(int id)
+        public async Task<List<Review>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _reviewDal.GetAllAsync();
         }
 
-        public async Task TInsert(Review entity)
+        public async Task<Review> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _reviewDal.GetByIdAsync(id);
         }
 
-        public async Task TUpdate(Review entity)
+        public async Task TInsertAsync(Review entity)
         {
-            throw new NotImplementedException();
+            await _reviewDal.InsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(Review entity)
+        {
+            await _reviewDal.UpdateAsync(entity);   
         }
     }
 }

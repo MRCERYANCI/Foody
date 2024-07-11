@@ -10,29 +10,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class ProductManager : IProductService
     {
-        public async Task TDelete(int id)
+        private readonly IProductService _productService;
+
+        public ProductManager(IProductService productService)
         {
-            throw new NotImplementedException();
+            _productService = productService;
         }
 
-        public async Task<List<Product>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+           await _productService.TDeleteAsync(id);
         }
 
-        public async Task<Product> TGetById(int id)
+        public async Task<List<Product>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _productService.TGetAllAsync();
         }
 
-        public async Task TInsert(Product entity)
+        public async Task<Product> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _productService.TGetByIdAsync(id);
         }
 
-        public async Task TUpdate(Product entity)
+        public async Task TInsertAsync(Product entity)
         {
-            throw new NotImplementedException();
+            await _productService.TInsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(Product entity)
+        {
+            await _productService.TUpdateAsync(entity);
         }
     }
 }

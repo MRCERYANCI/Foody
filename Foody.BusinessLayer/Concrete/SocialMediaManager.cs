@@ -1,4 +1,5 @@
 ﻿using Foody.BusinessLayer.Abstract;
+using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class SocialMediaManager : ISocialMediaService
     {
-        public async Task TDelete(int id)
+        private readonly ISocialMediaDal _socialMediaDal;
+
+        public SocialMediaManager(ISocialMediaDal socialMediaDal)
         {
-            throw new NotImplementedException();
+            _socialMediaDal = socialMediaDal;
         }
 
-        public async Task<List<SocialMedia>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _socialMediaDal.DeleteAsync(id);
         }
 
-        public async Task<SocialMedia> TGetById(int id)
+        public async Task<List<SocialMedia>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _socialMediaDal.GetAllAsync();
         }
 
-        public async Task TInsert(SocialMedia entity)
+        public async Task<SocialMedia> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _socialMediaDal.GetByIdAsync(id);
         }
 
-        public async Task TUpdate(SocialMedia entity)
+        public async Task TInsertAsync(SocialMedia entity)
         {
-            throw new NotImplementedException();
+            await _socialMediaDal.InsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(SocialMedia entity)
+        {
+            await _socialMediaDal.UpdateAsync(entity);
         }
     }
 }

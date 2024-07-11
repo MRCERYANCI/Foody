@@ -1,4 +1,5 @@
 ﻿using Foody.BusinessLayer.Abstract;
+using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class AddressManager : IAddressService
     {
-        public async Task TDelete(int id)
+        private readonly IAddressDal _addressDal;
+
+        public AddressManager(IAddressDal addressDal)
         {
-            throw new NotImplementedException();
+            _addressDal = addressDal;
         }
 
-        public async Task<List<Address>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _addressDal.DeleteAsync(id);
         }
 
-        public async Task<Address> TGetById(int id)
+        public async Task<List<Address>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _addressDal.GetAllAsync();
         }
 
-        public async Task TInsert(Address entity)
+        public async Task<Address> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+           return await _addressDal.GetByIdAsync(id);
         }
 
-        public async Task TUpdate(Address entity)
+        public async Task TInsertAsync(Address entity)
         {
-            throw new NotImplementedException();
+            await _addressDal.InsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(Address entity)
+        {
+            await _addressDal.UpdateAsync(entity);
         }
     }
 }

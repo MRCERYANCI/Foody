@@ -1,4 +1,5 @@
 ﻿using Foody.BusinessLayer.Abstract;
+using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class SliderManager : ISliderService
     {
-        public async Task TDelete(int id)
+        private readonly ISliderDal _sliderDal;
+
+        public SliderManager(ISliderDal sliderDal)
         {
-            throw new NotImplementedException();
+            _sliderDal = sliderDal;
         }
 
-        public async Task<List<Slider>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _sliderDal.DeleteAsync(id);
         }
 
-        public async Task<Slider> TGetById(int id)
+        public async Task<List<Slider>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _sliderDal.GetAllAsync();
         }
 
-        public async Task TInsert(Slider entity)
+        public async Task<Slider> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _sliderDal.GetByIdAsync(id);
         }
 
-        public async Task TUpdate(Slider entity)
+        public async Task TInsertAsync(Slider entity)
         {
-            throw new NotImplementedException();
+            await _sliderDal.InsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(Slider entity)
+        {
+           await _sliderDal.UpdateAsync(entity);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Foody.BusinessLayer.Abstract;
+using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class AboutManager : IAboutService
     {
-        public async Task TDelete(int id)
+        private readonly IAboutDal _aboutDal;
+
+        public AboutManager(IAboutDal aboutDal)
         {
-            throw new NotImplementedException();
+            _aboutDal = aboutDal;
         }
 
-        public async Task<List<About>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _aboutDal.DeleteAsync(id);
         }
 
-        public async Task<About> TGetById(int id)
+        public async Task<List<About>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _aboutDal.GetAllAsync();
         }
 
-        public async Task TInsert(About entity)
+        public async Task<About> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _aboutDal.GetByIdAsync(id);
         }
 
-        public async Task TUpdate(About entity)
+        public async Task TInsertAsync(About entity)
         {
-            throw new NotImplementedException();
+            await _aboutDal.InsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(About entity)
+        {
+            await _aboutDal.UpdateAsync(entity);
         }
     }
 }

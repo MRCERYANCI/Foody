@@ -1,4 +1,5 @@
 ﻿using Foody.BusinessLayer.Abstract;
+using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Foody.BusinessLayer.Concrete
 {
     public class FeatureManager : IFeatureService
     {
-        public async Task TDelete(int id)
+        private readonly IFeatureDal _featureDal;
+
+        public FeatureManager(IFeatureDal featureDal)
         {
-            throw new NotImplementedException();
+            _featureDal = featureDal;
         }
 
-        public async Task<List<Feature>> TGetAll()
+        public async Task TDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _featureDal.DeleteAsync(id);
         }
 
-        public async Task<Feature> TGetById(int id)
+        public async Task<List<Feature>> TGetAllAsync()
         {
-            throw new NotImplementedException();
+           return await _featureDal.GetAllAsync();
         }
 
-        public async Task TInsert(Feature entity)
+        public async Task<Feature> TGetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _featureDal.GetByIdAsync(id);
         }
 
-        public async Task TUpdate(Feature entity)
+        public async Task TInsertAsync(Feature entity)
         {
-            throw new NotImplementedException();
+            await _featureDal.InsertAsync(entity);
+        }
+
+        public async Task TUpdateAsync(Feature entity)
+        {
+            await _featureDal.UpdateAsync(entity);
         }
     }
 }
