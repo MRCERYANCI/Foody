@@ -11,16 +11,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.17" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Foody.BusinessLayer\Foody.BusinessLayer.csproj" />
     <ProjectReference Include="..\Foody.DataAccessLayer\Foody.DataAccessLayer.csproj" />
     <ProjectReference Include="..\Foody.EntityLayer\Foody.EntityLayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
