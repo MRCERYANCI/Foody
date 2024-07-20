@@ -14,6 +14,27 @@ namespace Foody.PresentationLayer.Containers
 
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal,EfCategoryDal>();
+
+            //services.AddScoped<IAboutService, AboutManager>();
+            //services.AddScoped<IAboutDal, EfAboutDal>();
+
+            //services.AddScoped<IAddressService, AddressManager>();
+            //services.AddScoped<IAddressDal, EfAddressDal>();
+
+            //services.AddScoped<IFeatureService, FeatureManager>();
+            //services.AddScoped<IFeatureDal, EfFeatureDal>();
+
+            //services.AddScoped<IProductService, ProductManager>();
+            //services.AddScoped<IProductDal, EfProductDal>();
+
+            //services.AddScoped<IReviewService, ReviewManager>();
+            //services.AddScoped<IReviewDal, EfReviewDal>();
+
+            //services.AddScoped<ISliderService, SliderManager>();
+            //services.AddScoped<ISliderDal, EfSliderDal>();
+
+            //services.AddScoped<ISocialMediaService, SocialMediaManager>();
+            //services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
         }
     }
 }
