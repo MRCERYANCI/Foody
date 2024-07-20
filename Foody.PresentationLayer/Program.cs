@@ -1,6 +1,9 @@
+using Foody.PresentationLayer.Containers;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddServiceExtensions();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

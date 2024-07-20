@@ -13,133 +13,15 @@
       
         <div class="container">
             <div class="page-inner">
-                <div class="page-header">
-                    <h3 class="fw-bold mb-3">Avatars</h3>
-                    <ul class="breadcrumbs mb-3">
-                        <li class="nav-home">
-                            <a href="#">
-                                <i class="icon-home"></i>
-                            </a>
-                        </li>
-                        <li class="separator">
-                            <i class="icon-arrow-right"></i>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">Base</a>
-                        </li>
-                        <li class="separator">
-                            <i class="icon-arrow-right"></i>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">Avatars</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Sizing</h4>
-
-                            </div>
-                            <div class="card-body">
-                                <p class="demo">
-                                    <div class="avatar avatar-xxl">
-                                        <img src="~/Admin Teması/kaiadmin-lite-1.2.0/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </div>
-
-                                    <div class="avatar avatar-xl">
-                                        <img src="~/Admin Teması/kaiadmin-lite-1.2.0/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </div>
-
-                                    <div class="avatar avatar-lg">
-                                        <img src="~/Admin Teması/kaiadmin-lite-1.2.0/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </div>
-
-                                    <div class="avatar">
-                                        <img src="~/Admin Teması/kaiadmin-lite-1.2.0/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </div>
-
-                                    <div class="avatar avatar-sm">
-                                        <img src="~/Admin Teması/kaiadmin-lite-1.2.0/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </div>
-
-                                    <div class="avatar avatar-xs">
-                                        <img src="~/Admin Teması/kaiadmin-lite-1.2.0/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                    </div>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @await Component.InvokeAsync("_AdminPageHeaderLayoutComponentPartial")
+                @RenderBody()
             </div>
         </div>
 
         @await Component.InvokeAsync("_AdminFooterLayoutComponentPartial")
     </div>
 
-
-    <div class="custom-template">
-        <div class="title">Settings</div>
-        <div class="custom-content">
-            <div class="switcher">
-                <div class="switch-block">
-                    <h4>Logo Header</h4>
-                    <div class="btnSwitch">
-                        <button type="button" class=" selected changeLogoHeaderColor" data-color="dark"></button>
-                        <button type="button" class="selected changeLogoHeaderColor" data-color="blue"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="green"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="red"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="white"></button>
-                        <br />
-                        <button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
-                        <button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
-                    </div>
-                </div>
-                <div class="switch-block">
-                    <h4>Navbar Header</h4>
-                    <div class="btnSwitch">
-                        <button type="button" class="changeTopBarColor" data-color="dark"></button>
-                        <button type="button" class="changeTopBarColor" data-color="blue"></button>
-                        <button type="button" class="changeTopBarColor" data-color="purple"></button>
-                        <button type="button" class="changeTopBarColor" data-color="light-blue"></button>
-                        <button type="button" class="changeTopBarColor" data-color="green"></button>
-                        <button type="button" class="changeTopBarColor" data-color="orange"></button>
-                        <button type="button" class="changeTopBarColor" data-color="red"></button>
-                        <button type="button" class="changeTopBarColor" data-color="white"></button>
-                        <br />
-                        <button type="button" class="changeTopBarColor" data-color="dark2"></button>
-                        <button type="button" class="selected changeTopBarColor" data-color="blue2"></button>
-                        <button type="button" class="changeTopBarColor" data-color="purple2"></button>
-                        <button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
-                        <button type="button" class="changeTopBarColor" data-color="green2"></button>
-                        <button type="button" class="changeTopBarColor" data-color="orange2"></button>
-                        <button type="button" class="changeTopBarColor" data-color="red2"></button>
-                    </div>
-                </div>
-                <div class="switch-block">
-                    <h4>Sidebar</h4>
-                    <div class="btnSwitch">
-                        <button type="button" class="selected changeSideBarColor" data-color="white"></button>
-                        <button type="button" class="changeSideBarColor" data-color="dark"></button>
-                        <button type="button" class="changeSideBarColor" data-color="dark2"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="custom-toggle">
-            <i class="icon-settings"></i>
-        </div>
-    </div>
-
+    @await Component.InvokeAsync("_AdminCustomTemplateLayputComponentPartial")
     </div>
     @await Component.InvokeAsync("_AdminScriptLayoutComponentPartial")
 </body>
