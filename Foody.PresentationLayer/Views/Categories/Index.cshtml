@@ -28,13 +28,13 @@
                     <tr>
                         <td>@Count</td>
                         <td>@categories.CategoryName</td>
-                        <td>@(categories.CategoryStatus == true ? "Aktif" : "Pasif")</td>
+                        <td>@(categories.CategoryStatus == true ? "Active" : "Passive")</td>
                         <td>
                             <a href="#" class="btn btn-black">
                                 <span class="btn-label">
                                     <i class="fa fa-archive"></i>
                                 </span>
-                                Sil
+                                Delete
                             </a>
                         </td>
                         <td>
@@ -42,7 +42,7 @@
                                 <span class="btn-label">
                                     <i class="fa fa-exclamation-circle"></i>
                                 </span>
-                                Güncelle
+                                Update
                             </a>
                         </td>
                     </tr>
