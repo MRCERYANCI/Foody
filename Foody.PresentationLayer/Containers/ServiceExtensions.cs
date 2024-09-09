@@ -3,6 +3,7 @@ using Foody.BusinessLayer.Concrete;
 using Foody.DataAccessLayer.Abstract;
 using Foody.DataAccessLayer.Concrete;
 using Foody.DataAccessLayer.EntityFramework;
+using System.Reflection;
 
 namespace Foody.PresentationLayer.Containers
 {
@@ -11,6 +12,7 @@ namespace Foody.PresentationLayer.Containers
         public static void AddServiceExtensions(this IServiceCollection services)
         {
             services.AddDbContext<FoodyContext>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal,EfCategoryDal>();

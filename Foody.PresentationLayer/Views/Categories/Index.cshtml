@@ -30,7 +30,7 @@
                         <td>@categories.CategoryName</td>
                         <td>@(categories.CategoryStatus == true ? "Active" : "Passive")</td>
                         <td>
-                            <a href="#" class="btn btn-black">
+                            <a href="/Categories/DeleteCategory/@categories.CategoryId" class="btn btn-black">
                                 <span class="btn-label">
                                     <i class="fa fa-archive"></i>
                                 </span>

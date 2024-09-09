@@ -1,0 +1,33 @@
+﻿@model CreateCategoryDto
+
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/AdminLayout/LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Category Forms</div>
+            </div>
+            <form method="post">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="email2">Category Name</label>
+                                <input type="text" class="form-control" id="email2" placeholder="Please enter the product category." asp-for="CategoryName" />
+                                <span class="form-text text-muted" style="color:red!important;" asp-validation-for="CategoryName"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

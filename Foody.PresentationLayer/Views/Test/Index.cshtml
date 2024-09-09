@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSOD Screen</title>
+    <title>@ViewBag.Message</title>
     <style>
         body {
             background-color: #0078d7;
@@ -24,7 +24,7 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             padding: 20px;
             margin-bottom: 10%;
         }
@@ -52,6 +52,28 @@
             margin-top: 10px;
             font-size: 14px;
         }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            .button:hover {
+                background-color: white;
+                color: #0078d7;
+            }
     </style>
 </head>
 <body>
@@ -64,7 +86,21 @@
             <p>If you call a support person, give them this info:</p>
             <p class="stop-code">Stop code: 0x00000000</p>
         </div>
+        <div class="buttons">
+            <button class="button" onclick="goBack();">See advanced repair options</button>
+            <button class="button">Restart my PC</button>
+        </div>
+       @*  <div style="display:flex; justify-content:right;margin-top:14px;">
+            <img class="nav-link" src="~/Images/microsoft-azure.png" height="50" />
+        </div> *@
     </div>
+
+    <script>
+
+        function goBack() {
+            history.back(); // or you can use history.go(-1);
+        }
+    </script>
 </body>
 </html>
 
